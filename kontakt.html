@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srovnání a Kontakt | TechPulse</title>
+    <meta name="description" content="Srovnání technologií a kontaktní formulář.">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">TechPulse</a>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Domů</a></li>
+                    <li class="aktivni"><a href="kontakt.html">Srovnání &amp; Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h1>Srovnání programovacích jazyků</h1>
+            <p>Každý jazyk v IT má své specifické využití – od nízkoúrovňového řízení paměti až po webový frontend.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Jazyk</th>
+                            <th>Hlavní využití</th>
+                            <th>Správa paměti</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>C</strong></td>
+                            <td>Operační systémy, vestavěné systémy, výkon</td>
+                            <td>Ruční (malloc / free)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>JavaScript</strong></td>
+                            <td>Webový frontend, interaktivita v prohlížeči, Node.js</td>
+                            <td>Automatická (Garbage Collector)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Python</strong></td>
+                            <td>Analýza dat, strojové učení, skriptování</td>
+                            <td>Automatická (Garbage Collector)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Napište nám svůj dotaz</h2>
+            <form id="kontakt-form" novalidate>
+                <div class="form-group">
+                    <label for="jmeno">Vaše jméno</label>
+                    <input type="text" id="jmeno" name="jmeno" placeholder="Jan Novák" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Váš e-mail</label>
+                    <input type="email" id="email" name="email" placeholder="jan.novak@vsb.cz" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="oblast">Oblíbená oblast IT</label>
+                    <select id="oblast" name="oblast">
+                        <option value="programovani">Programování (C, JS, Python)</option>
+                        <option value="hardware">Hardware a sítě</option>
+                        <option value="ai">Umělá inteligence</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="zprava">Zpráva (min. 10 znaků)</label>
+                    <textarea id="zprava" name="zprava" rows="4" required></textarea>
+                </div>
+
+                <button type="submit" class="btn">Odeslat zprávu</button>
+                <p id="form-zprava" role="alert"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 TechPulse – Studentský projekt ZIT (VŠB-TUO)</p>
+    </footer>
+</body>
+</html>
+

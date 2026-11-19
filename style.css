@@ -1,0 +1,251 @@
+:root {
+    --hlavni: #00A498;
+    --tmava: #14212b;
+    --pozadi: #f4f7f9;
+    --bila: #ffffff;
+    --text: #1f2933;
+    --chyba: #c92a2a;
+    --uspech: #2b8a3e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--pozadi);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Horní lišta a navigace (Flexbox) */
+.site-header {
+    background-color: var(--tmava);
+    color: var(--bila);
+    padding: 1rem 0;
+}
+
+.header-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo {
+    color: var(--bila);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+}
+
+.menu a {
+    color: #cbd5e1;
+    text-decoration: none;
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.menu a:hover,
+.menu li.aktivni a {
+    background-color: var(--hlavni);
+    color: var(--bila);
+}
+
+/* Hlavní kontejner */
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1.25rem;
+}
+
+section {
+    margin-bottom: 2.5rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--tmava);
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--tmava);
+}
+
+/* Hero sekce a odpočet */
+.hero {
+    background-color: var(--bila);
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 5px solid var(--hlavni);
+}
+
+.countdown-box {
+    margin-top: 1.25rem;
+    padding: 0.85rem 1rem;
+    background-color: #e6f7f5;
+    border-radius: 6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* Mřížka karet (CSS Grid – mobile-first) */
+.karty {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+.karta {
+    background-color: var(--bila);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #d9e2ec;
+    transition: transform 0.2s;
+}
+
+.karta:hover {
+    transform: translateY(-3px);
+}
+
+.karta h3 {
+    color: var(--hlavni);
+    margin-bottom: 0.5rem;
+}
+
+/* Rozbalovací FAQ (details + summary) */
+details {
+    background-color: var(--bila);
+    padding: 1rem 1.25rem;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    border: 1px solid #d9e2ec;
+}
+
+summary {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+details p {
+    margin-top: 0.5rem;
+}
+
+/* Tabulka */
+.table-wrap {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bila);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #d9e2ec;
+}
+
+th {
+    background-color: var(--hlavni);
+    color: var(--bila);
+}
+
+/* Formulář */
+.form-section {
+    background-color: var(--bila);
+    padding: 1.75rem;
+    border-radius: 10px;
+    border: 1px solid #d9e2ec;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+
+input, select, textarea {
+    padding: 0.65rem;
+    border: 1px solid #bcccdc;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.btn {
+    background-color: var(--hlavni);
+    color: var(--bila);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+#form-zprava {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.stav-chyba {
+    color: var(--chyba);
+}
+
+.stav-uspech {
+    color: var(--uspech);
+}
+
+/* Patička */
+.site-footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #627d98;
+    border-top: 1px solid #d9e2ec;
+    margin-top: 3rem;
+}
+
+/* Responzivita pro větší obrazovky (tablet a desktop >= 768px) */
+@media (min-width: 768px) {
+    .header-inner {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .karty {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
